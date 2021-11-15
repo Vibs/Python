@@ -7,7 +7,7 @@ I dag:
 
 funktioner
     - alle built-in funktioner returnerer noget - fordi man vil hellere lave et nyt objekt i stedet for at ændre i det eksisterende objekt
-        - fx sorted returnerer en ny liste som er sorteret - så den ændrer ikke i den liste man giver den med
+        - fx sorted returnerer en ny liste som er sorteret - så den ændrer iKKE i den liste man giver den med
 
 
 the python datamodel
@@ -17,19 +17,26 @@ the python datamodel
 MAGIC METHODS
     - == dem med underscore
     - det er dem som implementerer løsningen BAG top-level syntax - så man kan bruge top-level syntax (I think)
+        - top-level functions 
+            - == built-in functions
+        - top-level syntax 
+            - == + og -, in, osv. 
         - man laver den for at kunne eksekvere en eller anden syntax
     - det er egnetlig fordi at python har built-in functions
         - built-in er allerede implementeret for de typer som findes i java
         når vi så selv laver en klasse og gerne vil bruge de built in functions på vores objekter af vores nye klasse
         så skal vi så implementere logikken TIL de built in functions VIA at implementere de her magic methods i klassen
         - på denne måde kan man bruge de samme built-in functions over det hele!! Og dette er grunden til at vi gerne vil gøre det!!!
-            - det er smart at syntaxen er det samme OVER DET HELE
+            - det er smart at syntaxen er det samme OVER DET HELE!!!! smart fordi: ...
+                - det er nemt at læse
+                - det er nemmere at kode sammen og at sætte sig ind i andres kode, hvis vi ligesom har visse standarder/aftaler
 
     - man laver ikke sine EGNE underscore-funtkioner - man laver dem som trækker på frameworket
     - man skal altid kalde den self
-    - når man laver en magic method, skal den altid tage imod mindst 1 param - i java, det objekt som man ville kalde metoden på
-        - den skal hedde: self
-    - oversigt over syntaxen og magic-method'en:
+    - når man laver en magic method, skal den altid tage imod mindst 1 param - (i java, vil det svare til det objekt som man kalder metoden på)
+        - dette ene param skal hedde: self (den KAN godt hedde noget andet, men standard er self)
+
+    - oversigt over top-level syntaxen og magic-method'en, som skal implementeres for at man kan bruge den
         SYNTAX      METHOD          PARAMS                  EKS
         +           __add__         (self, other)           obj + obj
         []          __getitem__     (self, key)             obj[key]
@@ -39,24 +46,26 @@ MAGIC METHODS
       
 
 funktioner vs metoder
-    - hedder metode når det er i en klassen
+    - hedder metode når det er i en klasse
     - funktion = når den ikke er i en klasse
 
 KLASSE
 - hvis man skal kunne bruge + på to selvskabte objekter, så skal man implementere the magic method: add() i klassen! - se ses8.py klassen A
-
-top-level funtions = built-in functions
-top-level syntax = + og minus og sådan
 
 linkedList
     - en ting på listen indeholde værdien og så en pointer hen på det næste obj
     - det er hurtigere at slette elementer fra denne, fordi alle elemtnerene ikke skal rykke sig en plads ligesom på en arrayliste
         - i stedet så rykker man bare pointeren på ét enkelt obj over til det næste
 
+    -TODO lav den der opgave der!
+
 KOMMANDOER - TERMINAL
     docker run -it --rm python
+        - 
     docker run -it --rm -v ${PWD}:/docs python bash
+        - 
     help([datatype])
+        - sådan ser man info omkring datatypen
 
 
 

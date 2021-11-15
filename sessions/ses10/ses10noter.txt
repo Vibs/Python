@@ -1,0 +1,65 @@
+generators:
+    - en måde at gøre sin kode mere effektiv på
+
+
+
+
+
+
+recap fra 2 sidste gang:
+    datamodel = 
+    toplevel syntax eller functions
+        - == ting der ligger i sproget som vi kan bruge
+    callable(obj)
+        - obj er callable hvis enten det er en funktion ELLER hvis objektets klasse har implementeret metoden: __call__
+        
+        fx: 
+            class Adder:
+                pass
+            
+            add1 = Adder()
+            callable(add1) // == False, fordi Adder ikke har metoden: __call__ implementeret
+
+            ELLER man kan tilføje __call__ til Adder-klassen:
+
+            class Adder:
+                    def __call__(self, a, b):
+                        return a + b
+
+            Så ville både: 
+                add1 = Adder()
+                callable(add1)
+            bliver True, OG:
+                add1(Adder)
+                add1(1,5)
+            vil blive: 6 - fordi add1 er jo callable
+
+i python er ALT et objekt
+    - objekter er klasser (en instans af en klasse)
+
+
+
+Iterator
+    l = [1, 2, 3, 4]
+    it = iter(l) //  iter == built-in function
+    next(it) // vil skrive et element ud ad gangen
+    - når jeg laver en iterator-klasse, skal jeg implementere __iter__ og __next__ OG en raise StopIteration() -
+        -  men her vil vi gerne bruge generator-func i stedet, fordi det er nemmere/simplere
+        - for at man kan bruge for i in mitEgetObjekt, SKAL vi altså have gjort dette 
+            - for-loopet er altså en af de ting som går ind og kigger på om det er en iterator-klasse
+
+        - ALTSÅ hvis jeg laver et loop over mit eget type obj, SKAL vi have implementeret __iter__, __next__ og raise StopIteration()
+
+Generator-function
+    - i stedet for: return i        siger man yield i
+    - generator-expression: ligesom list comprehension, men i stedet for [] bruger man ()
+        - det som bliver returneret er så et generator obj
+
+Vi skal kunne skriver på alle 3 måder:
+    - iterable-klasse
+    - generator-expression
+    - hvad var den sidste? 
+
+
+Terminal:
+    - vim fil.type // hvad gør dette?
